@@ -1,0 +1,25 @@
+package 11package
+/**
+ * Double-checked locking
+ */
+public class Singleton {
+
+    //Private Constructor
+    private Singleton() {}
+
+    private static volatile Singleton instance;
+
+   //Provide a static method to get this object externally
+    public static Singleton getInstance() {
+		//First check, if instance is not null, do not enter the locking stage, return directly
+        if(instance == null) {
+            synchronized (Singleton.class) {
+                //Check again if it's null after acquiring the lock
+                if(instance == null) {
+                    instance = new Singleton();
+                }
+            }
+        }
+        return instance;
+    }
+}

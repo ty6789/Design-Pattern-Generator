@@ -1,0 +1,33 @@
+package 11package
+
+import java.io.*;
+
+//Prototype Class
+public class ${className} implements Cloneable {
+
+    public ${className}() {}
+
+    @Override
+    public ${className} clone() {
+        try {
+            return (${className}) super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // Deep Clone
+    public ${className} deepClone() throws IOException, ClassNotFoundException {
+        //Create Object Output Stream
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("your file address"));
+        //Write the object to the file
+        oos.writeObject(this);
+        oos.close();
+
+        //Create Object Input Stream
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("your file address"));
+        //Get The Object
+        return (${className}) ois.readObject();
+    }
+}

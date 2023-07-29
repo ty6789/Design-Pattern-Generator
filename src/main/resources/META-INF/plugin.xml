@@ -1,0 +1,27 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>Design Pattern Generator</id>
+    <name>Design Pattern Generator</name>
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="3060416187@qq.com">ty</vendor>
+    <description>
+        <![CDATA[
+                Design Pattern Generator is an excellent IntelliJ IDEA plugin that aids developers in generating code for
+           a total of 24 design patterns, including the 23 classic patterns and Simple Factory pattern. It's easy to
+           use and convenient with templates for each pattern, making the implementation of these design patterns more
+           straightforward and less time-consuming. This plugin is beneficial for developers of all experience levels
+           who aim to efficiently apply design patterns in their projects.
+    ]]>
+    </description>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <extensions defaultExtensionNs="com.intellij">
+    </extensions>
+    <actions>
+        <action id="MyAction" class="com.example.test_plugin.MyAction" text="Design Pattern Generator" description="MyAction">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last" />
+        </action>
+    </actions>
+
+</idea-plugin>
